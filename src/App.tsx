@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header/Header';
+import Navbar from "./components/Navbar/Navbar";
+import ContentWrapper from "./components/ContentWrapper/ContentWrapper";
+import Profile from './components/ContentWrapper/Profile/Profile';
+import Dialogs from "./components/ContentWrapper/Dialogs/Dialogs";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className="App">
+
+			<Header />
+
+			<article className="Article">
+
+				<Navbar/>
+
+				<ContentWrapper>
+
+					{/*<Profile />*/}
+
+					<Dialogs />
+
+				</ContentWrapper>
+
+			</article>
+
+		</div>
+	);
 }
 
 export default App;
