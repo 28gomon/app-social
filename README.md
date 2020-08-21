@@ -4,6 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## 20. React JS (NavLink)
 ## 21. React JS (Верстаем страницу Диалогов)
 ## 22. React JS (Route exact)
+## 23. React JS (props для Диалогов)
 
 ## Available Scripts
 
