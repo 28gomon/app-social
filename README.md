@@ -5,6 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## 21. React JS (Верстаем страницу Диалогов)
 ## 22. React JS (Route exact)
 ## 23. React JS (props для Диалогов)
+## 24. React JS (UI - BLL, выносим данные в сторону)
 
 ## Available Scripts
 

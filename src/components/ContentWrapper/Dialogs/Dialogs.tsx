@@ -4,34 +4,60 @@ import {DialogUserItem} from "./DialogUserItem/DialogUserItem";
 import {DialogMessageItem} from "./DialogMessageItem/DialogMessageItem";
 
 function Dialogs() {
+
+	const dialogsData = [
+		{id: 1, name: 'Andrey', active: true},
+		{id: 2, name: 'Sergey', active: false},
+		{id: 3, name: 'Valeriy', active: false},
+		{id: 4, name: 'Alexandr', active: false},
+		{id: 5, name: 'Afonia', active: false},
+		{id: 6, name: 'Evlampij', active: false},
+		{id: 7, name: 'Geka', active: false},
+		{id: 8, name: 'Roma', active: false},
+		{id: 9, name: 'Dima', active: false},
+	];
+
+	const messagesData = [
+		{id: 1, text: 'Hi'},
+		{id: 2, text: 'Hello my friend'},
+		{id: 3, text: 'hqwfkwefklewjfklewjfkwe'},
+		{id: 4, text: 'hqwfkwefklewjfklewjfkwe'},
+	];
+
 	return(
 		<div className={classes.Dialogs}>
 
-			<div className={classes.Title}>
-				Dialog
-			</div>
+			<div className={classes.Title}>Dialog</div>
 
 			<div className={classes.DialogContainer}>
 				<div className={classes.UserList}>
 
-					<DialogUserItem id={1} name={'Andrey'} active={true} />
-					<DialogUserItem id={2} name={'Sergey'} active={false} />
-					<DialogUserItem id={3} name={'Valeriy'} active={false} />
-					<DialogUserItem id={4} name={'Alexandr'} active={false} />
-					<DialogUserItem id={5} name={'Afonia'} active={false} />
-					<DialogUserItem id={6} name={'Evlampij'} active={false} />
-					<DialogUserItem id={8} name={'Geka'} active={false} />
-					<DialogUserItem id={9} name={'Roma'} active={false} />
-					<DialogUserItem id={10} name={'Dima'} active={false} />
+					{
+						dialogsData.map((data, index) => {
+							return (
+								<DialogUserItem
+									key={index + '_' + data.id}
+									id={data.id}
+									name={data.name}
+									active={data.active} />
+							)
+						})
+					}
 
 				</div>
 
 				<div className={classes.DialogUserList}>
 
-					<DialogMessageItem id={1} text={'Hi'} />
-					<DialogMessageItem id={2} text={'Hello my friend'} />
-					<DialogMessageItem id={3} text={'hqwfkwefklewjfklewjfkwe'} />
-					<DialogMessageItem id={4} text={'hqwfkwefklewjfklewjfkwe'} />
+					{
+						messagesData.map((data, index) => {
+							return (
+								<DialogMessageItem
+									key={index + '_' + data.id}
+									id={data.id}
+									text={data.text} />
+							)
+						})
+					}
 
 				</div>
 			</div>
