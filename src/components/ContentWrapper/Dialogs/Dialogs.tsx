@@ -1,5 +1,6 @@
 import React from "react";
 import classes from './Dialogs.module.css';
+import { NavLink } from "react-router-dom";
 
 function Dialogs() {
 	return(
@@ -12,22 +13,22 @@ function Dialogs() {
 			<div className={classes.DialogContainer}>
 				<div className={classes.UserList}>
 					<div className={classes.Item + ' ' + classes.active}>
-						Andrey
+						<NavLink to={'/dialogs/1'}>Andrey</NavLink>
 					</div>
 					<div className={classes.Item}>
-						Sergey
+						<NavLink to={'/dialogs/2'}>Sergey</NavLink>
 					</div>
 					<div className={classes.Item}>
-						Valeriy
+						<NavLink to={'/dialogs/3'}>Valeriy</NavLink>
 					</div>
 					<div className={classes.Item}>
-						Alexandr
+						<NavLink to={'/dialogs/4'}>Alexandr</NavLink>
 					</div>
 					<div className={classes.Item}>
-						Afonia
+						<NavLink to={'/dialogs/5'}>Afonia</NavLink>
 					</div>
 					<div className={classes.Item}>
-						Evlampij
+						<NavLink to={'/dialogs/6'}>Evlampij</NavLink>
 					</div>
 				</div>
 
