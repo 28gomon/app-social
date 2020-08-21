@@ -2,6 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## 19. React JS (route, browser-router, маршрутизация)
 ## 20. React JS (NavLink)
+## 21. React JS (Верстаем страницу Диалогов)
 
 ## Available Scripts
 

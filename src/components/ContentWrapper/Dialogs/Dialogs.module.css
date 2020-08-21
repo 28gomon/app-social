@@ -5,3 +5,73 @@
     box-sizing: border-box;
     padding-bottom: 20px;
 }
+
+.Title {
+    padding: 20px;
+    font-size: 30px;
+}
+
+.DialogContainer {
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+.UserList {
+    width: 100%;
+    max-width: 320px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.UserList .Item {
+    font-size: 20px;
+    line-height: 45px;
+    padding-left: 20px;
+    position: relative;
+    cursor: pointer;
+    transition: background .25s ease-in;
+}
+
+.UserList .Item:hover {
+    background: #fafafa;
+}
+
+.UserList .Item.active {
+    background: #fafafa;
+    cursor: default;
+}
+
+.UserList .Item.active::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background: #c65050;
+}
+
+.DialogUserList {
+    width: 100%;
+    padding: 20px;
+}
+
+.DialogUserList .Item {
+    margin-left: 30px;
+    width: 100%;
+    display: inline-block;
+    align-items: center;
+}
+
+.DialogUserList .Item:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.DialogUserList .Item .Text {
+    background: #f1f1f1;
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+}
