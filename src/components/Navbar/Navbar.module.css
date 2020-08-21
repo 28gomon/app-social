@@ -22,10 +22,10 @@
     text-decoration: none;
     padding-left: 10px;
     border-radius: 5px;
+    transition: background .25s ease-in;
 }
 
 .Nav div a.active {
-    color: aqua;
     background: #eaeaea;
 }
 

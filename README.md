@@ -1,6 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## 19. Уроки React JS (route, browser-router, маршрутизация)
+## 19. React JS (route, browser-router, маршрутизация)
+## 20. React JS (NavLink)
 
 ## Available Scripts
 
