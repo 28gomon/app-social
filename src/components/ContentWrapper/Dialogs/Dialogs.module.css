@@ -20,6 +20,8 @@
 .UserList {
     width: 100%;
     max-width: 320px;
+    height: 320px;
+    overflow: auto;
     padding-top: 20px;
     padding-bottom: 20px;
     background: #f1f1f1;
@@ -45,7 +47,7 @@
     background: #fafafa;
 }
 
-.UserList .Item.active {
+.UserList .Item.active, .Item.active a {
     background: #fafafa;
     cursor: default;
 }
