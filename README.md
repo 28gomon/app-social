@@ -6,6 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## 22. React JS (Route exact)
 ## 23. React JS (props для Диалогов)
 ## 24. React JS (UI - BLL, выносим данные в сторону)
+## 25. React JS (метод массива - map)
 
 ## Available Scripts
 
