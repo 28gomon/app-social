@@ -1,20 +1,21 @@
 import React from 'react';
 import classes from "./MyPosts.module.css";
 import Post from "./Post/Post";
+import {ProfilePageTypes} from "../../../../redux/state";
 
-function MyPosts() {
+function MyPosts(props: ProfilePageTypes) {
 
-	const postData = [
-		{id: 1, message: "Hello World", likesCount: 2},
-		{id: 2, message: "Hi, how are you?", likesCount: 12},
-		{id: 3, message: "Ok!", likesCount: 5},
-	];
+	// const postData = [
+	// 	{id: 1, message: "Hello World", likesCount: 2},
+	// 	{id: 2, message: "Hi, how are you?", likesCount: 12},
+	// 	{id: 3, message: "Ok!", likesCount: 5},
+	// ];
 
 	return (
 		<div className={classes.Posts}>
 
 			{
-				postData.map(post => {
+				props.posts.map(post => {
 					return (
 						<Post
 							id={post.id}

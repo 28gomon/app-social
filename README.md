@@ -8,6 +8,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## 24. React JS (UI - BLL, выносим данные в сторону)
 ## 25. React JS (метод массива - map)
 ## 26. React JS (структура проекта, ещё раз про ui - bll)
+## 27. React JS (component vs render, прокидываем props через Route)
 
 ## Available Scripts
 
