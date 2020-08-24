@@ -10,6 +10,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## 26. React JS (структура проекта, ещё раз про ui - bll)
 ## 27. React JS (component vs render, прокидываем props через Route)
 ## 28. React JS (выносим данные в index.js)
+## 29. React JS (упаковываем данные в state)
 
 ## Available Scripts
 

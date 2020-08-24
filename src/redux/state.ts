@@ -34,7 +34,7 @@ export type RootStateTypes = {
 	sidebar: SidebarTypes
 }
 
-let state: RootStateTypes = {
+const state: RootStateTypes = {
 	profilePage: {
 		posts: [
 			{id: 1, message: "Hello World", likesCount: 2},
@@ -59,6 +59,7 @@ let state: RootStateTypes = {
 			{id: 2, message: 'Hello my friend'},
 			{id: 3, message: 'hqwfkwefklewjfklewjfkwe'},
 			{id: 4, message: 'hqwfkwefklewjfklewjfkwe'},
+			{id: 5, message: 'How your affairs'},
 		]
 	},
 	sidebar: {}
