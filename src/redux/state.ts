@@ -21,14 +21,14 @@ type MessagesTypes = {
 }
 // dialogsPage -> dialogs
 // dialogsPage -> message
-type DialogsPageTypes = {
+export type DialogsPageTypes = {
 	dialogs: Array<DialogsTypes>
 	messages: Array<MessagesTypes>
 }
 
 type SidebarTypes = {}
 
-type RootStateTypes = {
+export type RootStateTypes = {
 	profilePage: ProfilePageTypes
 	dialogsPage: DialogsPageTypes
 	sidebar: SidebarTypes

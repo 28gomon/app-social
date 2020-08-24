@@ -6,9 +6,13 @@ import ContentWrapper from "./components/ContentWrapper/ContentWrapper";
 import Profile from './components/ContentWrapper/Profile/Profile';
 import Dialogs from "./components/ContentWrapper/Dialogs/Dialogs";
 import {BrowserRouter, Route} from "react-router-dom";
-import state from './redux/state';
+import {RootStateTypes} from './redux/state';
 
-function App() {
+type StatePropsType = {
+	state: RootStateTypes
+}
+
+function App({state}: StatePropsType) {
 	return (
 		<BrowserRouter>
 			<div className="App">
@@ -26,7 +30,7 @@ function App() {
 							render={() => <Profile posts={state.profilePage.posts} />}/>
 						<Route
 							path="/dialogs"
-							render={() => <Dialogs />}/>
+							render={() => <Dialogs data={state.dialogsPage} />}/>
 
 					</ContentWrapper>
 
