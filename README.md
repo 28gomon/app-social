@@ -11,6 +11,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## 27. React JS (component vs render, прокидываем props через Route)
 ## 28. React JS (выносим данные в index.js)
 ## 29. React JS (упаковываем данные в state)
+## 31. React JS - onClick, ref, VirtualDOM
 
 ## Available Scripts
 
