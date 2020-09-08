@@ -1,15 +1,25 @@
-import React from 'react';
+import React, {ChangeEvent, useState} from 'react';
 import classes from './Profile.module.css';
 import MyPosts from './MyPosts/MyPosts';
 import {ProfileInfo} from "./ProfileInfo/ProfileInfo";
-import {ProfilePageTypes} from '../../../redux/state';
+import {PostsTypes} from '../../../redux/state';
 
-function Profile(props: ProfilePageTypes) {
+type ProfilePropsType = {
+	posts: Array<PostsTypes>
+	addPost: (postMessage: string) => void
+}
 
-	let newPostElement = React.createRef<HTMLTextAreaElement>();
+function Profile({posts, addPost}: ProfilePropsType) {
 
-	function addPost() {
-		let text = newPostElement.current;
+	let [value, setValue] = useState<string>('');
+
+	function addPostHandler() {
+		setValue('');
+		addPost(value);
+	}
+
+	function onChangeHandler(e: string) {
+		setValue(e);
 	}
 
 	return (
@@ -18,11 +28,16 @@ function Profile(props: ProfilePageTypes) {
 			<ProfileInfo />
 
 			<div className={classes.AddPost}>
-				<textarea ref={newPostElement} placeholder="Add Post" />
-				<button onClick={addPost}>Send</button>
+				<textarea
+					value={value}
+					onChange={(e: ChangeEvent<HTMLTextAreaElement>) => {
+						onChangeHandler(e.currentTarget.value);
+					}}
+					placeholder="Add Post" />
+				<button onClick={addPostHandler}>Send</button>
 			</div>
 
-			<MyPosts posts={props.posts} />
+			<MyPosts posts={posts} />
 
 		</div>
 	)

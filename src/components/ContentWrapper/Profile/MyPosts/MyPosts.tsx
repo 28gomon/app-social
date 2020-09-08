@@ -1,15 +1,19 @@
 import React from 'react';
 import classes from "./MyPosts.module.css";
 import Post from "./Post/Post";
-import {ProfilePageTypes} from "../../../../redux/state";
+import {PostsTypes} from "../../../../redux/state";
 
-function MyPosts(props: ProfilePageTypes) {
+type MyPostsPropsType = {
+	posts: Array<PostsTypes>
+}
+
+function MyPosts({posts}: MyPostsPropsType) {
 
 	return (
 		<div className={classes.Posts}>
 
 			{
-				props.posts.map((post, index) => {
+				posts.map((post, index) => {
 					return (
 						<Post
 							key={index}
