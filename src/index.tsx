@@ -1,6 +1,6 @@
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import state, {RootStateTypes} from './redux/state';
+import state from './redux/state';
 
 import {rerenderEntireTree} from "./render";
 

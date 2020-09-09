@@ -1,4 +1,5 @@
 import React from "react";
+// @ts-ignore
 import classes from './ContentWrapper.module.css';
 
 function ContentWrapper(children: any) {

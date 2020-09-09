@@ -1,4 +1,5 @@
 import React from "react";
+// @ts-ignore
 import classes from './Dialogs.module.css';
 import {DialogUserItem} from "./DialogUserItem/DialogUserItem";
 import {DialogMessageItem} from "./DialogMessageItem/DialogMessageItem";

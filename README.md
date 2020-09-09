@@ -13,6 +13,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## 29. React JS (упаковываем данные в state)
 ## 31. React JS - onClick, ref, VirtualDOM
 ## 32. React JS - прокидываем callback через props
+## 33. React JS - добавление поста на стену (зачатки FLUX-концепции)
+## 34. React JS - Вынос мозга (FLUX-круговорот на каждый символ)
 
 ## Available Scripts
 

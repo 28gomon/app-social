@@ -1,25 +1,26 @@
 import React, {ChangeEvent, useState} from 'react';
+// @ts-ignore
 import classes from './Profile.module.css';
 import MyPosts from './MyPosts/MyPosts';
-import {ProfileInfo} from "./ProfileInfo/ProfileInfo";
+import {ProfileInfo} from './ProfileInfo/ProfileInfo';
 import {PostsTypes} from '../../../redux/state';
 
 type ProfilePropsType = {
 	posts: Array<PostsTypes>
-	addPost: (postMessage: string) => void
+	newPostText: string
+	addPost: () => void
+	updateNewPostText: (newText: string) => void
 }
 
-function Profile({posts, addPost}: ProfilePropsType) {
-
-	let [value, setValue] = useState<string>('');
+function Profile({posts, addPost, newPostText, updateNewPostText}: ProfilePropsType) {
 
 	function addPostHandler() {
-		setValue('');
-		addPost(value);
+		addPost();
+		updateNewPostText('');
 	}
 
 	function onChangeHandler(e: string) {
-		setValue(e);
+		updateNewPostText(e);
 	}
 
 	return (
@@ -29,12 +30,15 @@ function Profile({posts, addPost}: ProfilePropsType) {
 
 			<div className={classes.AddPost}>
 				<textarea
-					value={value}
+					value={newPostText}
 					onChange={(e: ChangeEvent<HTMLTextAreaElement>) => {
 						onChangeHandler(e.currentTarget.value);
 					}}
-					placeholder="Add Post" />
-				<button onClick={addPostHandler}>Send</button>
+					placeholder="Add Post"
+				/>
+				<button
+					onClick={addPostHandler}
+				>Send</button>
 			</div>
 
 			<MyPosts posts={posts} />

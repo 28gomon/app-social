@@ -10,10 +10,11 @@ import {RootStateTypes} from './redux/state';
 
 type AppPropsType = {
 	state: RootStateTypes
-	addPost: (postMessage: string) => void
+	addPost: () => void
+	updateNewPostText: (newText: string) => void
 }
 
-function App({state, addPost, ...addProps}: AppPropsType) {
+function App({state, addPost, updateNewPostText, ...addProps}: AppPropsType) {
 	return (
 		<BrowserRouter>
 			<div className="App">
@@ -30,7 +31,9 @@ function App({state, addPost, ...addProps}: AppPropsType) {
 							path="/profile"
 							render={() => <Profile
 								posts={state.profilePage.posts}
+								newPostText={state.profilePage.newPostText}
 								addPost={addPost}
+								updateNewPostText={updateNewPostText}
 							/>}/>
 						<Route
 							path="/dialogs"

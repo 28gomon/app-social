@@ -9,6 +9,7 @@ export type PostsTypes = {
 // profilePage -> posts
 export type ProfilePageTypes = {
 	posts: Array<PostsTypes>
+	newPostText: string
 }
 // dialogsPage -> dialogs -> [{}]
 type DialogsTypes = {
@@ -42,7 +43,8 @@ const state: RootStateTypes = {
 			{id: 1, message: "Hello World", likesCount: 2},
 			{id: 2, message: "Hi, how are you?", likesCount: 12},
 			{id: 3, message: "Ok!", likesCount: 5},
-		]
+		],
+		newPostText: ''
 	},
 	dialogsPage: {
 		dialogs: [
@@ -67,12 +69,25 @@ const state: RootStateTypes = {
 	sidebar: {}
 }
 
-export let addPost = (postMessage: string) => {
-	let newPost: PostsTypes = {
-		id: state.profilePage.posts.length + 1, message: postMessage, likesCount: 0
-	};
-	state.profilePage.posts.push(newPost);
+export let addPost = () => {
+	if (state.profilePage.newPostText) {
+		const newPost: PostsTypes = {
+			id: state.profilePage.posts.length + 1,
+			message: state.profilePage.newPostText,
+			likesCount: 0
+		};
+		state.profilePage.newPostText = '';
+		state.profilePage.posts.push(newPost);
+		rerenderEntireTree(state);
+	}
+}
+
+export let updateNewPostText = (newText: string) => {
+	state.profilePage.newPostText = newText;
 	rerenderEntireTree(state);
 }
+
+// @ts-ignore
+window.state = state;
 
 export default state;
