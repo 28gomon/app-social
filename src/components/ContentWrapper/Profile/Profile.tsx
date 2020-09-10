@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useState} from 'react';
+import React, {ChangeEvent} from 'react';
 // @ts-ignore
 import classes from './Profile.module.css';
 import MyPosts from './MyPosts/MyPosts';

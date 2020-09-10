@@ -1,4 +1,4 @@
-import {rerenderEntireTree} from "../render";
+let rerenderEntireTree = (state: SubscriberTypes | any) => {};
 
 // profilePage -> posts -> [{}]
 export type PostsTypes = {
@@ -35,6 +35,10 @@ export type RootStateTypes = {
 	profilePage: ProfilePageTypes
 	dialogsPage: DialogsPageTypes
 	sidebar: SidebarTypes
+}
+
+type SubscriberTypes = {
+	subscriber: (observer: RootStateTypes) => void
 }
 
 const state: RootStateTypes = {
@@ -85,6 +89,10 @@ export let addPost = () => {
 export let updateNewPostText = (newText: string) => {
 	state.profilePage.newPostText = newText;
 	rerenderEntireTree(state);
+}
+
+export const subscriber = (observer: any) => {
+	rerenderEntireTree = observer;
 }
 
 // @ts-ignore
