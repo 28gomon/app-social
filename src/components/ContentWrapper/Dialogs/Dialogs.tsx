@@ -3,7 +3,7 @@ import React from "react";
 import classes from './Dialogs.module.css';
 import {DialogUserItem} from "./DialogUserItem/DialogUserItem";
 import {DialogMessageItem} from "./DialogMessageItem/DialogMessageItem";
-import {DialogsPageTypes} from "../../../redux/state";
+import {DialogsPageTypes} from "../../../types";
 
 type DialogStateType = {
 	data: DialogsPageTypes

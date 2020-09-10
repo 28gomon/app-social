@@ -16,6 +16,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## 33. React JS - добавление поста на стену (зачатки FLUX-концепции)
 ## 34. React JS - Вынос мозга (FLUX-круговорот на каждый символ)
 ## 35. React JS - callback, subscribe, observer
+## 36. React JS - про ООП поверхностно (зачем нам объекты)
+## 37. React JS - store, state, ООП, рефакторинг
 
 ## Available Scripts
 

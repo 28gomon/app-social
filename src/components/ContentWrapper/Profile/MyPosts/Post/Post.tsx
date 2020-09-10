@@ -1,6 +1,7 @@
 import React from 'react';
+// @ts-ignore
 import classes from "./Post.module.css";
-import {PostsTypes} from "../../../../../redux/state";
+import {PostsTypes} from "../../../../../types";
 
 function Post(props: PostsTypes) {
 	return (

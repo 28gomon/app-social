@@ -1,3 +1,4 @@
+// @ts-ignore
 import classes from "../Profile.module.css";
 import React from "react";
 

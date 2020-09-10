@@ -6,7 +6,8 @@ import ContentWrapper from "./components/ContentWrapper/ContentWrapper";
 import Profile from './components/ContentWrapper/Profile/Profile';
 import Dialogs from "./components/ContentWrapper/Dialogs/Dialogs";
 import {BrowserRouter, Route} from "react-router-dom";
-import {RootStateTypes} from './redux/state';
+import {RootStateTypes} from "./types";
+
 
 type AppPropsType = {
 	state: RootStateTypes
