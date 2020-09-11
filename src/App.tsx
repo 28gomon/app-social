@@ -6,7 +6,7 @@ import ContentWrapper from "./components/ContentWrapper/ContentWrapper";
 import Profile from './components/ContentWrapper/Profile/Profile';
 import Dialogs from "./components/ContentWrapper/Dialogs/Dialogs";
 import {BrowserRouter, Route} from "react-router-dom";
-import {RootStateTypes} from "./types";
+import {RootStateTypes} from "./types/types";
 
 
 type AppPropsType = {
@@ -14,10 +14,7 @@ type AppPropsType = {
 	dispatch: (action: any) => void
 }
 
-function App({
-				 state,
-				 dispatch,
-				 ...addProps}: AppPropsType) {
+function App({state, dispatch, ...addProps}: AppPropsType) {
 	return (
 		<BrowserRouter>
 			<div className="App">
@@ -39,7 +36,9 @@ function App({
 							/>}/>
 						<Route
 							path="/dialogs"
-							render={() => <Dialogs data={state.dialogsPage} />}/>
+							render={() => <Dialogs
+								dispatch={dispatch}
+								data={state.dialogsPage} />}/>
 
 					</ContentWrapper>
 

@@ -4,7 +4,7 @@ import store from './redux/state';
 import ReactDOM from "react-dom";
 import React from "react";
 import App from "./App";
-import {RootStateTypes} from "./types";
+import {RootStateTypes} from "./types/types";
 
 const rerenderEntireTree = (state: RootStateTypes) => {
 	ReactDOM.render(

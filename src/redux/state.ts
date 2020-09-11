@@ -1,7 +1,10 @@
-import {PostsTypes, StoreTypes, SubscriberTypes} from "../types";
-
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+import {PostsTypes, StoreTypes, SubscriberTypes} from "../types/types";
+import {
+	ADD_NEW_MESSAGE_TEXT,
+	ADD_POST,
+	UPDATE_NEW_MESSAGE_TEXT,
+	UPDATE_NEW_POST_TEXT
+} from "../types/action-types";
 
 let store: StoreTypes = {
 	_state: {
@@ -31,18 +34,15 @@ let store: StoreTypes = {
 				{id: 3, message: 'hqwfkwefklewjfklewjfkwe'},
 				{id: 4, message: 'hqwfkwefklewjfklewjfkwe'},
 				{id: 5, message: 'How your affairs'},
-			]
+			],
+			newMessageText: ''
 		},
 		sidebar: {}
 	},
 
 	_rerenderEntireTree(state: SubscriberTypes | any) {},
 
-	getState() {
-		return this._state;
-	},
-
-	addPost() {
+	_addPost() {
 		if (this._state.profilePage.newPostText) {
 			const newPost: PostsTypes = {
 				id: this._state.profilePage.posts.length + 1,
@@ -55,9 +55,13 @@ let store: StoreTypes = {
 		}
 	},
 
-	updateNewPostText(newText: string) {
+	_updateNewPostText(newText: string) {
 		this._state.profilePage.newPostText = newText;
 		this._rerenderEntireTree(this._state);
+	},
+
+	getState() {
+		return this._state;
 	},
 
 	subscriber(observer: any) {
@@ -67,13 +71,28 @@ let store: StoreTypes = {
 	// реализация dispatch - lesson 38(ветка git dispatch-38)
 	dispatch(action: any) {
 		if (action.type === ADD_POST) {
-			this.addPost();
+			this._addPost();
 		} else if (action.type === UPDATE_NEW_POST_TEXT) {
-			this.updateNewPostText(action.newText);
+			this._updateNewPostText(action.newText);
+		} else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
+			this._state.dialogsPage.newMessageText = action.newText
+			this._rerenderEntireTree(this._state);
+		} else if (action.type === ADD_NEW_MESSAGE_TEXT) {
+			const text = this._state.dialogsPage.newMessageText;
+			if (text) {
+				const newMessageText = {
+					id: this._state.dialogsPage.messages.length,
+					message: text
+				}
+				this._state.dialogsPage.messages.push(newMessageText);
+				this._state.dialogsPage.newMessageText = '';
+				this._rerenderEntireTree(this._state);
+			}
 		}
 	}
 }
 
+// profile
 export const addPostActionCreator = () => {
 	return {
 		type: ADD_POST
@@ -86,6 +105,22 @@ export const updateNewPostTextActionCreator = (text: string) => {
 		newText: text
 	}
 }
+// profile
+
+// dialogs
+export const updateNewMessageTextActionCreator = (newText: string) => {
+	return {
+		type: UPDATE_NEW_MESSAGE_TEXT,
+		newText: newText
+	}
+}
+
+export const addNewMessageTextActionCreator = () => {
+	return {
+		type: ADD_NEW_MESSAGE_TEXT
+	}
+}
+// dialogs
 
 // @ts-ignore
 window.store = store;

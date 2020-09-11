@@ -1,7 +1,7 @@
 import React from 'react';
 // @ts-ignore
 import classes from "./Post.module.css";
-import {PostsTypes} from "../../../../../types";
+import {PostsTypes} from "../../../../../types/types";
 
 function Post(props: PostsTypes) {
 	return (

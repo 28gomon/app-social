@@ -2,7 +2,7 @@ import React from 'react';
 // @ts-ignore
 import classes from './MyPosts.module.css';
 import Post from "./Post/Post";
-import {PostsTypes} from "../../../../types";
+import {PostsTypes} from "../../../../types/types";
 
 type MyPostsPropsType = {
 	posts: Array<PostsTypes>

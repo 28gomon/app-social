@@ -84,3 +84,28 @@
     border-radius: 10px;
     display: inline-block;
 }
+
+.DialogUserListTextArea {
+    padding-left: 30px;
+}
+
+.DialogUserListTextArea textarea {
+    width: 100%;
+    height: 100px;
+    min-height: 100px;
+    max-width: 1000px;
+    min-width: 100%;
+    padding: 20px;
+    border: 2px solid #f1f1f1;
+    border-radius: 10px;
+    font-size: 20px;
+    transition: border .25s ease-in-out;
+    margin-bottom: 20px;
+}
+
+.DialogUserListTextArea textarea:active,
+.DialogUserListTextArea textarea:hover,
+.DialogUserListTextArea textarea:focus {
+    outline: none;
+    border: 2px solid #b8d0d0;
+}

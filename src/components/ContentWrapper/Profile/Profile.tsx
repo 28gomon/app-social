@@ -3,7 +3,7 @@ import React, {ChangeEvent} from 'react';
 import classes from './Profile.module.css';
 import MyPosts from './MyPosts/MyPosts';
 import {ProfileInfo} from './ProfileInfo/ProfileInfo';
-import {PostsTypes} from "../../../types";
+import {PostsTypes} from "../../../types/types";
 import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/state";
 
 type ProfilePropsType = {

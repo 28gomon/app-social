@@ -25,6 +25,7 @@ export type MessagesTypes = {
 export type DialogsPageTypes = {
 	dialogs: Array<DialogsTypes>
 	messages: Array<MessagesTypes>
+	newMessageText: string
 }
 
 export type SidebarTypes = {}
@@ -42,9 +43,9 @@ export type SubscriberTypes = {
 export type StoreTypes = {
 	_state: RootStateTypes
 	_rerenderEntireTree: (state: SubscriberTypes | any) => void
+	_addPost: () => void
+	_updateNewPostText: (newText: string) => void
 	getState: () => RootStateTypes
-	addPost: () => void
-	updateNewPostText: (newText: string) => void
 	subscriber: (observer: any) => void
 	dispatch: (action: any) => void
 }

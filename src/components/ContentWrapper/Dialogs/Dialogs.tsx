@@ -3,13 +3,24 @@ import React from "react";
 import classes from './Dialogs.module.css';
 import {DialogUserItem} from "./DialogUserItem/DialogUserItem";
 import {DialogMessageItem} from "./DialogMessageItem/DialogMessageItem";
-import {DialogsPageTypes} from "../../../types";
+import {DialogsPageTypes} from "../../../types/types";
+import {addNewMessageTextActionCreator, updateNewMessageTextActionCreator} from "../../../redux/state";
 
 type DialogStateType = {
 	data: DialogsPageTypes
+	dispatch: (action: any) => void
 }
 
-function Dialogs({data}: DialogStateType) {
+function Dialogs({data, dispatch}: DialogStateType) {
+
+	function onSendMessageClick() {
+		dispatch(addNewMessageTextActionCreator());
+		dispatch(updateNewMessageTextActionCreator(''));
+	}
+
+	function onNewTextMessageChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
+		dispatch(updateNewMessageTextActionCreator(e.currentTarget.value));
+	}
 
 	return(
 		<div className={classes.Dialogs}>
@@ -45,6 +56,18 @@ function Dialogs({data}: DialogStateType) {
 							)
 						})
 					}
+
+					<div className={classes.DialogUserListTextArea}>
+						<div>
+							<textarea
+								onChange={onNewTextMessageChange}
+								placeholder={'Add message'}
+								value={data.newMessageText}/>
+						</div>
+						<div>
+							<button onClick={onSendMessageClick}>Отправить</button>
+						</div>
+					</div>
 
 				</div>
 			</div>
