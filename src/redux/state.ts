@@ -1,5 +1,7 @@
 import {PostsTypes, StoreTypes, SubscriberTypes} from "../types";
 
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 
 let store: StoreTypes = {
 	_state: {
@@ -60,9 +62,29 @@ let store: StoreTypes = {
 
 	subscriber(observer: any) {
 		this._rerenderEntireTree = observer;
-	}
+	},
 
 	// реализация dispatch - lesson 38(ветка git dispatch-38)
+	dispatch(action: any) {
+		if (action.type === ADD_POST) {
+			this.addPost();
+		} else if (action.type === UPDATE_NEW_POST_TEXT) {
+			this.updateNewPostText(action.newText);
+		}
+	}
+}
+
+export const addPostActionCreator = () => {
+	return {
+		type: ADD_POST
+	}
+}
+
+export const updateNewPostTextActionCreator = (text: string) => {
+	return {
+		type: UPDATE_NEW_POST_TEXT,
+		newText: text
+	}
 }
 
 // @ts-ignore

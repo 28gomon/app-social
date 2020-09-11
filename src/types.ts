@@ -46,4 +46,5 @@ export type StoreTypes = {
 	addPost: () => void
 	updateNewPostText: (newText: string) => void
 	subscriber: (observer: any) => void
+	dispatch: (action: any) => void
 }

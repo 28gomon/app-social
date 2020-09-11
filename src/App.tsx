@@ -11,11 +11,13 @@ import {RootStateTypes} from "./types";
 
 type AppPropsType = {
 	state: RootStateTypes
-	addPost: () => void
-	updateNewPostText: (newText: string) => void
+	dispatch: (action: any) => void
 }
 
-function App({state, addPost, updateNewPostText, ...addProps}: AppPropsType) {
+function App({
+				 state,
+				 dispatch,
+				 ...addProps}: AppPropsType) {
 	return (
 		<BrowserRouter>
 			<div className="App">
@@ -33,8 +35,7 @@ function App({state, addPost, updateNewPostText, ...addProps}: AppPropsType) {
 							render={() => <Profile
 								posts={state.profilePage.posts}
 								newPostText={state.profilePage.newPostText}
-								addPost={addPost}
-								updateNewPostText={updateNewPostText}
+								dispatch={dispatch}
 							/>}/>
 						<Route
 							path="/dialogs"

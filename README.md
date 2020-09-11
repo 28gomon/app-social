@@ -19,6 +19,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## 36. React JS - про ООП поверхностно (зачем нам объекты)
 ## 37. React JS - store, state, ООП, рефакторинг
 ## 38. React JS - dispatch и action
+## 39. React JS - action creator, action type
 
 ## Available Scripts
 

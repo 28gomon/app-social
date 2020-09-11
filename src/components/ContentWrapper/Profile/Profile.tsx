@@ -4,23 +4,23 @@ import classes from './Profile.module.css';
 import MyPosts from './MyPosts/MyPosts';
 import {ProfileInfo} from './ProfileInfo/ProfileInfo';
 import {PostsTypes} from "../../../types";
+import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/state";
 
 type ProfilePropsType = {
 	posts: Array<PostsTypes>
 	newPostText: string
-	addPost: () => void
-	updateNewPostText: (newText: string) => void
+	dispatch: (action: any) => void
 }
 
-function Profile({posts, addPost, newPostText, updateNewPostText}: ProfilePropsType) {
+function Profile({posts, newPostText, dispatch}: ProfilePropsType) {
 
 	function addPostHandler() {
-		addPost();
-		updateNewPostText('');
+		dispatch(addPostActionCreator());
+		dispatch(updateNewPostTextActionCreator(''));
 	}
 
 	function onChangeHandler(e: string) {
-		updateNewPostText(e);
+		dispatch(updateNewPostTextActionCreator(e));
 	}
 
 	return (
