@@ -61,6 +61,8 @@ let store: StoreTypes = {
 	subscriber(observer: any) {
 		this._rerenderEntireTree = observer;
 	}
+
+	// реализация dispatch - lesson 38(ветка git dispatch-38)
 }
 
 // @ts-ignore
