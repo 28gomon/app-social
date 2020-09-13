@@ -1,10 +1,4 @@
 import {StoreTypes, SubscriberTypes} from "../types/types";
-import {
-	ADD_NEW_MESSAGE_TEXT,
-	ADD_POST,
-	UPDATE_NEW_MESSAGE_TEXT,
-	UPDATE_NEW_POST_TEXT
-} from "../types/action-types";
 import profileReducer from "./profile-reducer";
 import dialogReducer from "./dialog-reducer";
 
@@ -61,36 +55,6 @@ let store: StoreTypes = {
 		this._rerenderEntireTree(this._state);
 	}
 }
-
-// profile
-export const addPostActionCreator = () => {
-	return {
-		type: ADD_POST
-	}
-}
-
-export const updateNewPostTextActionCreator = (text: string) => {
-	return {
-		type: UPDATE_NEW_POST_TEXT,
-		newText: text
-	}
-}
-// profile
-
-// dialogs
-export const updateNewMessageTextActionCreator = (newText: string) => {
-	return {
-		type: UPDATE_NEW_MESSAGE_TEXT,
-		newText: newText
-	}
-}
-
-export const addNewMessageTextActionCreator = () => {
-	return {
-		type: ADD_NEW_MESSAGE_TEXT
-	}
-}
-// dialogs
 
 // @ts-ignore
 window.store = store;

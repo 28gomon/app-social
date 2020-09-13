@@ -4,7 +4,10 @@ import classes from './Dialogs.module.css';
 import {DialogUserItem} from "./DialogUserItem/DialogUserItem";
 import {DialogMessageItem} from "./DialogMessageItem/DialogMessageItem";
 import {DialogsPageTypes} from "../../../types/types";
-import {addNewMessageTextActionCreator, updateNewMessageTextActionCreator} from "../../../redux/state";
+import {
+	addNewMessageTextActionCreator,
+	updateNewMessageTextActionCreator
+} from "../../../redux/dialog-reducer";
 
 type DialogStateType = {
 	data: DialogsPageTypes
