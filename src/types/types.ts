@@ -43,8 +43,8 @@ export type SubscriberTypes = {
 export type StoreTypes = {
 	_state: RootStateTypes
 	_rerenderEntireTree: (state: SubscriberTypes | any) => void
-	_addPost: () => void
-	_updateNewPostText: (newText: string) => void
+	// _addPost: () => void
+	// _updateNewPostText: (newText: string) => void
 	getState: () => RootStateTypes
 	subscriber: (observer: any) => void
 	dispatch: (action: any) => void

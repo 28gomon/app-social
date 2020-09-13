@@ -1,10 +1,12 @@
-import {PostsTypes, StoreTypes, SubscriberTypes} from "../types/types";
+import {StoreTypes, SubscriberTypes} from "../types/types";
 import {
 	ADD_NEW_MESSAGE_TEXT,
 	ADD_POST,
 	UPDATE_NEW_MESSAGE_TEXT,
 	UPDATE_NEW_POST_TEXT
 } from "../types/action-types";
+import profileReducer from "./profile-reducer";
+import dialogReducer from "./dialog-reducer";
 
 let store: StoreTypes = {
 	_state: {
@@ -42,24 +44,6 @@ let store: StoreTypes = {
 
 	_rerenderEntireTree(state: SubscriberTypes | any) {},
 
-	_addPost() {
-		if (this._state.profilePage.newPostText) {
-			const newPost: PostsTypes = {
-				id: this._state.profilePage.posts.length + 1,
-				message: this._state.profilePage.newPostText,
-				likesCount: 0
-			};
-			this._state.profilePage.newPostText = '';
-			this._state.profilePage.posts.push(newPost);
-			this._rerenderEntireTree(this._state);
-		}
-	},
-
-	_updateNewPostText(newText: string) {
-		this._state.profilePage.newPostText = newText;
-		this._rerenderEntireTree(this._state);
-	},
-
 	getState() {
 		return this._state;
 	},
@@ -70,25 +54,11 @@ let store: StoreTypes = {
 
 	// реализация dispatch - lesson 38(ветка git dispatch-38)
 	dispatch(action: any) {
-		if (action.type === ADD_POST) {
-			this._addPost();
-		} else if (action.type === UPDATE_NEW_POST_TEXT) {
-			this._updateNewPostText(action.newText);
-		} else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
-			this._state.dialogsPage.newMessageText = action.newText
-			this._rerenderEntireTree(this._state);
-		} else if (action.type === ADD_NEW_MESSAGE_TEXT) {
-			const text = this._state.dialogsPage.newMessageText;
-			if (text) {
-				const newMessageText = {
-					id: this._state.dialogsPage.messages.length,
-					message: text
-				}
-				this._state.dialogsPage.messages.push(newMessageText);
-				this._state.dialogsPage.newMessageText = '';
-				this._rerenderEntireTree(this._state);
-			}
-		}
+
+		this._state.profilePage = profileReducer(this._state.profilePage, action);
+		this._state.dialogsPage = dialogReducer(this._state.dialogsPage, action);
+
+		this._rerenderEntireTree(this._state);
 	}
 }
 

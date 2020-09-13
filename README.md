@@ -21,6 +21,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## 38. React JS - dispatch и action
 ## 39. React JS - action creator, action type
 ## 40. React JS Практика - добавление Сообщения
+## 41. React JS Практика - reducer (почти redux)
 
 ## Available Scripts
 
