@@ -8,7 +8,7 @@ type DialogUserItemType = {
 	active: boolean
 }
 
-export function DialogUserItem(props: DialogUserItemType) {
+export const DialogUserItem: React.FC<DialogUserItemType> = (props) => {
 
 	let cls = [classes.Item];
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import classes from "./MyPosts.module.css";
-import Post from "./Post/Post";
+import {Post} from "./Post/Post";
 
-function MyPosts() {
+export const MyPosts = () => {
 
 	const postData = [
 		{id: 1, message: "Hello World", likesCount: 2},
@@ -27,5 +27,3 @@ function MyPosts() {
 		</div>
 	)
 }
-
-export default MyPosts;

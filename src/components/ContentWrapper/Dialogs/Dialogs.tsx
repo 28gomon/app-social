@@ -3,7 +3,7 @@ import classes from './Dialogs.module.css';
 import {DialogUserItem} from "./DialogUserItem/DialogUserItem";
 import {DialogMessageItem} from "./DialogMessageItem/DialogMessageItem";
 
-function Dialogs() {
+export const Dialogs = () => {
 
 	const dialogsData = [
 		{id: 1, name: 'Andrey', active: true},
@@ -65,5 +65,3 @@ function Dialogs() {
 		</div>
 	)
 }
-
-export default Dialogs;

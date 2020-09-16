@@ -6,7 +6,7 @@ type DialogMessageItemType = {
 	text: string
 }
 
-export function DialogMessageItem(props: DialogMessageItemType) {
+export const DialogMessageItem: React.FC<DialogMessageItemType> = (props) => {
 	return (
 		<div className={classes.Item} key={props.id}>
 			<div className={classes.Text}>{props.text}</div>

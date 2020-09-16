@@ -1,7 +1,7 @@
 import classes from "../Profile.module.css";
 import React from "react";
 
-export function ProfileInfo() {
+export const ProfileInfo = () => {
 	return (
 		<>
 			<div className={classes.ProfileImage}>

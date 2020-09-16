@@ -1,7 +1,7 @@
 import React from "react";
 import classes from './ContentWrapper.module.css';
 
-function ContentWrapper(children: any) {
+const ContentWrapper = (children: any) => {
 	return (
 		<section className={classes.ContentWrapper}>
 			{children.children}
